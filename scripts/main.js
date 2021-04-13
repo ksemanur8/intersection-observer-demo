@@ -42,11 +42,14 @@ let options = {
 
 function intersectionHandler(entries, observer) {
   // Do stuff described above
-  console.log(entries);
   // If it is intersecting
   entries.forEach(entry => {    
     if(entry.isIntersecting) {
         entry.target.classList.add("active");
+        
+        //Changing background color
+        let color = entry.target.dataset.color;
+        document.body.style.backgroundColor = color;
     } else {
         entry.target.classList.remove("active");
     }
